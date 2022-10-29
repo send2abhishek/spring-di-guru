@@ -14,6 +14,7 @@ public class SpringDependencyInjectionApplication {
         ApplicationContext context = SpringApplication.run(SpringDependencyInjectionApplication.class, args);
 
         // by default get bean method returns the bean with claas name starting with lower case
+        // inside the spring context its bean is created
         MyController controller=(MyController) context.getBean("myController");
 
         System.out.println(controller.sayHello());
