@@ -4,16 +4,14 @@ import com.spirngframework.learn.springdependencyinjection.services.GreetingServ
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class ControllerInjectorControllerTest {
 
-    ControllerInjectorController controller;
+    ConstructorInjectorController controller;
 
     @BeforeEach
     void setUp() {
 
-        controller = new ControllerInjectorController(new GreetingServiceImpl());
+        controller = new ConstructorInjectorController(new GreetingServiceImpl());
     }
 
     @Test

@@ -1,12 +1,14 @@
 package com.spirngframework.learn.springdependencyinjection.controllers;
 
 import com.spirngframework.learn.springdependencyinjection.services.GreetingService;
+import org.springframework.stereotype.Controller;
 
-public class ControllerInjectorController {
+@Controller
+public class ConstructorInjectorController {
 
     private final GreetingService greetingService;
 
-    public ControllerInjectorController(GreetingService greetingService) {
+    public ConstructorInjectorController(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 

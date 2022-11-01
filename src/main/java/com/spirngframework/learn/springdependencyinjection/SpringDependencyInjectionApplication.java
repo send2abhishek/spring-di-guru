@@ -1,6 +1,9 @@
 package com.spirngframework.learn.springdependencyinjection;
 
+import com.spirngframework.learn.springdependencyinjection.controllers.ConstructorInjectorController;
 import com.spirngframework.learn.springdependencyinjection.controllers.MyController;
+import com.spirngframework.learn.springdependencyinjection.controllers.PropertyInjectorController;
+import com.spirngframework.learn.springdependencyinjection.controllers.SetterInjectorController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -18,6 +21,19 @@ public class SpringDependencyInjectionApplication {
         MyController controller=(MyController) context.getBean("myController");
 
         System.out.println(controller.sayHello());
+
+        System.out.println("---property based controller ...");
+        PropertyInjectorController propertyInjectorController=(PropertyInjectorController) context.getBean("propertyInjectorController");
+        System.out.println(propertyInjectorController.getGreeting());
+
+
+        System.out.println("---setter based controller ...");
+        SetterInjectorController setterInjectorController=(SetterInjectorController) context.getBean("setterInjectorController");
+        System.out.println(propertyInjectorController.getGreeting());
+
+        System.out.println("---constructor based controller ...");
+         ConstructorInjectorController constructorInjectorController =(ConstructorInjectorController) context.getBean("constructorInjectorController");
+        System.out.println(constructorInjectorController.getGreeting());
 
     }
 
