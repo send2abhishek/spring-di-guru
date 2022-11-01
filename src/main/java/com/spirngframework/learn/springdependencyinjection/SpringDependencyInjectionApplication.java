@@ -20,6 +20,7 @@ public class SpringDependencyInjectionApplication {
         // inside the spring context its bean is created
         MyController controller=(MyController) context.getBean("myController");
 
+        System.out.println("---primary based controller ...");
         System.out.println(controller.sayHello());
 
         System.out.println("---property based controller ...");

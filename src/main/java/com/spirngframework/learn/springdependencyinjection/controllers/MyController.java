@@ -1,12 +1,18 @@
 package com.spirngframework.learn.springdependencyinjection.controllers;
 
+import com.spirngframework.learn.springdependencyinjection.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class MyController {
 
-    public String sayHello() {
+    private final GreetingService greetingService;
 
-        return "Hello do well in learning spring framework";
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
+    public String sayHello() {
+        return greetingService.sayHello();
     }
 }
