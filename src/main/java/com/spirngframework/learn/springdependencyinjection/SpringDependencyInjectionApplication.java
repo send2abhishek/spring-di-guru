@@ -1,9 +1,6 @@
 package com.spirngframework.learn.springdependencyinjection;
 
-import com.spirngframework.learn.springdependencyinjection.controllers.ConstructorInjectorController;
-import com.spirngframework.learn.springdependencyinjection.controllers.MyController;
-import com.spirngframework.learn.springdependencyinjection.controllers.PropertyInjectorController;
-import com.spirngframework.learn.springdependencyinjection.controllers.SetterInjectorController;
+import com.spirngframework.learn.springdependencyinjection.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -18,6 +15,9 @@ public class SpringDependencyInjectionApplication {
 
         // by default get bean method returns the bean with claas name starting with lower case
         // inside the spring context its bean is created
+        I18nController i18nController=(I18nController) context.getBean("i18nController");
+        System.out.println(i18nController.sayHello());
+
         MyController controller=(MyController) context.getBean("myController");
 
         System.out.println("---primary based controller ...");
