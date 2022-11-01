@@ -29,7 +29,7 @@ public class SpringDependencyInjectionApplication {
 
         System.out.println("---setter based controller ...");
         SetterInjectorController setterInjectorController=(SetterInjectorController) context.getBean("setterInjectorController");
-        System.out.println(propertyInjectorController.getGreeting());
+        System.out.println(setterInjectorController.getGreeting());
 
         System.out.println("---constructor based controller ...");
          ConstructorInjectorController constructorInjectorController =(ConstructorInjectorController) context.getBean("constructorInjectorController");

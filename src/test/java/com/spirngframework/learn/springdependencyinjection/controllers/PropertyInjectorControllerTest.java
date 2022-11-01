@@ -1,10 +1,8 @@
 package com.spirngframework.learn.springdependencyinjection.controllers;
 
-import com.spirngframework.learn.springdependencyinjection.services.GreetingServiceImpl;
+import com.spirngframework.learn.springdependencyinjection.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class PropertyInjectorControllerTest {
 
@@ -13,7 +11,7 @@ class PropertyInjectorControllerTest {
     @BeforeEach
     void setUp() {
         controller=new PropertyInjectorController();
-        controller.greetingService=new GreetingServiceImpl();
+        controller.greetingService =new ConstructorGreetingService();
     }
 
     @Test
